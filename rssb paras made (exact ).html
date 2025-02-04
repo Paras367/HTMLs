@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <link href="images/rssb.png" rel="apple-touch-icon">
+  <link href="images/rssb.ico" rel="icon">
+  <meta property="og:image" content="https://www.rssb.org/images/rssbanner.jpg" />
+  <meta property="og:site_name" content="Radha Soami Satsang Beas" />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="4bd13bdd44bba78ae3bfe885-text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous" type="4bd13bdd44bba78ae3bfe885-text/javascript"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous" type="4bd13bdd44bba78ae3bfe885-text/javascript"></script>
+  <script src="app.js" defer type="4bd13bdd44bba78ae3bfe885-text/javascript"></script>
+  <style>
+    Fbody {word-wrap: break-word;}
+.star-section-divider {text-align: center;}
+.card-columns, .columns {columns:350px}
+.box {padding: 10px;border: 1px solid lightgray; border-radius: 5px; font-family: sans-serif; font-size:12pt}
+.endquote {
+    margin: auto;
+    width: 45%;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    text-align: center;
+    color:gray; 
+    font-style:italic; 
+    font-size: 120%; 
+    padding-top: 10px;
+    padding-bottom: 10px;  
+}
+@font-face {
+	font-family:"HelveticaNeueLT Std Blk Cn";
+	font-style:normal;
+	font-weight:900;
+	font-stretch:condensed;
+	src : url("font/HelveticaNeueLTStd-BlkCn.otf");
+}
+@font-face {
+	font-family:"Benguiat";
+	src : url("font/BenguiatStd Bold.otf");
+}
+.CR {color: #686868; font-family: "HelveticaNeueLT Std Blk Cn", Serif; font-size:50pt; text-align: center}
+.SL3D {color:cornsilk; font-size:50pt; text-align: center; font-family: "Benguiat", Serif;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2)
+               ;
+  margin-bottom: 1.5rem;
+}
+li {
+    margin-bottom: 0.5em;
+   }   
+.navbar-nav li {
+     margin-bottom: inherit;
+   }
+.breadcrumb li{
+    margin-bottom: 0px;
+  }
+sub {font-style:normal;}
+sub:before {content: "\2014  "}
+.quote, blockquote {font-style:italic; border: none;
+    margin: 0.25em 0;
+    padding: 0.35em 40px;
+    line-height: 1.45;
+    position: relative;
+}
+.quote:before, blockquote:before {
+    display: block;
+    padding-left: 10px;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    color: #ccc;
+} 
+
+.no-italics{
+   font-weight: bold;
+}
+
+img {margin-bottom:5pt;
+    pointer-events: none;
+} /*stops image download*/
+/*"Minion Pro", */
+    body {
+    	font-family: serif;
+    	font-size: 14pt;
+    	line-height: 140%;
+    	background-color: #fbf9cd;
+    }
+    .table-header-dark, .card-header, .list-group-item, .navbar-nav>li>.dropdown-menu {
+    	background-color: cornsilk
+    }
+    .table-header-light{
+       background-color:floralwhite;
+        color: black;  
+    }
+   .box, .table-bordered{
+        background-color: white;
+    }
+ 
+    .sans a, .sans p, .list-group-item a {
+    	font-family: Sans-Serif;
+    	font-size: 13pt;
+    	color: black
+    }
+    .sans a:hover {
+    	color: blue
+    }
+    .img-thumbnail {
+    	font-size: 12pt;
+    	line-height: 120%;
+    }
+.btn {font-family: Sans-Serif; }
+h2 {border-bottom:1px solid #CCC; line-height: 180%;}
+    h1, h2, h3, h4, h1 a, h2 a, h3 a, h4 a {
+    	color: #686868; font-family: "HelveticaNeueLT Std Blk Cn", Sans-Serif;
+    }/*, font-style:normal; font-weight:900;*/
+    .table-bordered, .card, .list-group-item, audio, video, img, .alert, .modal, button, .btn, textarea, input, .shadow, .box, .tooltip-inner {
+    	-webkit-box-shadow: 0 10px 6px -6px #777;
+    	-moz-box-shadow: 0 10px 6px -6px #777;
+    	box-shadow: 0 10px 6px -6px #777;
+    }
+    .noshadow, input, .close {box-shadow: none}
+
+    .container {
+    	background-color: floralwhite;
+    	max-width: 770px;
+    	/*old=728*/
+    	padding: 10;
+        box-shadow: 0 0 20px #484545;
+    }
+    .navbar, .breadcrumb {
+    	font-family: sans-serif;
+    	font-size: 11pt;
+    }
+  
+.navbar {white-space: nowrap;}
+    .navbar-table {
+    	display: block;
+    }
+    .dropdown-menu>a:hover, .dropdown-menu>li>a:focus {
+    	background-color: white;
+    }
+
+    /*.navbar-toggler {outline: none !important;}*/
+
+    .navbar-dark .navbar-nav .nav-link {
+    	color: rgba(255, 255, 255, 1);
+    }
+    .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover .navbar-toggler {
+    	color: rgba(255, 255, 255, .75);
+    }
+    .cols {
+    	columns: 250px 3;
+    	-webkit-columns: 250px 3;
+    	-moz-columns: 250px 3;
+    	-webkit-column-rule: 1px solid darkred;
+    	-moz-column-rule: 1px solid darkred;
+    	column-rule: 1px solid darkred;
+    }
+    .cols2 {
+    	columns: 350px 2;
+    	-webkit-columns: 350px 2;
+    	-moz-columns: 350px 2;
+    }
+    .p50 {
+    	width:420px; max-width: 50%;
+    }
+    .p40 {
+    	max-width: 40%;
+    }
+    .p33 {
+    	max-width: 33%;
+    }
+    .p25 {
+    	max-width: 25%;
+    }
+    .p20 {
+    	max-width: 20%;
+    }
+
+@media print
+{
+body * { visibility: hidden; }
+article * { visibility: visible; }
+article  { position: absolute; top: 40px; left: 30px; }
+}
+    @media screen and (max-width: 430px) {h2 {font-size: 18pt;}}
+    @media screen and (max-width: 430px) {.SL3D {font-size: 30pt;}}
+    @media screen and (max-width: 430px) {
+    	.p50, .p40, .p33, .p25, .p20, .pullquote, .endquote {
+    		width: 520px; max-width: 100%; float:none;
+    		margin-bottom:10px;
+        }
+    }
+    .float-left {
+    	margin-right: 10px
+    }
+    .float-right {
+    	margin-left: 10px
+    }
+.cover {float:left; width:33%;}
+@media screen and (max-width: 430px) {.cover {width: 520px; max-width: 50%; margin-bottom:10px;}}
+    .navbar-toggler {
+    	align-self: flex-end;
+    }
+	.splink-container p > a {
+		color: black;
+	}
+	.spl-vol-issue {
+		margin-top: 1.5rem;
+    }
+    /* Toolltip styles */
+	.tooltip-inner {
+		color: #161616;
+		text-align: left; max-width: 320px;
+		background-color: #ffffaf !important;
+	}
+  .tooltip { z-index: 100 !important; }
+	.tooltip.show { opacity: 1}
+	.bs-tooltip-auto[x-placement^="top"] .arrow::before, .bs-tooltip-top .arrow::before {
+		border-top-color: #ffffaf !important;
+	}
+	.bs-tooltip-auto[x-placement^="bottom"] .arrow::before, .bs-tooltip-bottom .arrow::before {
+		border-bottom-color: #ffffaf !important;
+	}
+	.bs-tooltip-auto[x-placement^="left"] .arrow::before, .bs-tooltip-left .arrow::before {
+		border-left-color: #ffffaf !important;
+	}
+	.bs-tooltip-auto[x-placement^="right"] .arrow::before, .bs-tooltip-right .arrow::before {
+		border-right-color: #ffffaf !important;
+	}
+	.Subhead-i{
+		font-style:italic;
+		font-weight: bold;
+    }
+    .center-text{
+        text-align: center;
+    }
+    .sub-no-dash > sub:before{
+        content: none;
+    }
+
+    /* Wraps the chapter topics, in the TOC, with an indent on the mobile*/
+    .chapter-topics > span{
+        margin-left: -0.5em;
+      }    
+      /* Used in book Caring for your health - to show content as column cards*/
+      .card-1 {
+        box-shadow: none;
+       -webkit-box-shadow:0;
+       -moz-box-shadow: 0 ;
+       border: transparent;
+       background-color: transparent;
+      }
+      .card-body-1{
+        padding: 0;
+      }
+      @media only screen and (min-device-width : 320px) and (max-device-width : 768px) {
+        .card-columns {
+            display: flex;
+            columns: auto;
+            width: 100%;
+           flex-direction: column;
+          }
+  
+          .card-columns #tblother {
+            order: 4;
+          }
+      }
+      .image-left{
+        float: left;
+        margin-right: 20px;
+        margin-top: 20px;
+      }
+      .image-right{
+        float: right;
+        margin-left: 20px;
+        margin-top: 20px;
+      }
+
+       /* Smartphones (portrait and landscape) for floating images with lists*/
+       @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        .bd-content div.image-left {
+          float:none;
+          margin-left: 0px;
+          margin-top: 20px;
+          margin-right: 0px;
+        }
+  
+        .bd-content div.image-right {
+          float: none;
+          margin-right: 0px;
+          margin-top: 20px;
+          margin-left: 0px;
+        }
+
+        summary{
+          outline: none;
+        }
+    }
+  </style>
+
+  <nav class="navbar navbar-expand-md navbar-dark  container navbar-table" id="topNav" style="background-color: darkred;">
+    <img alt="RSSB" class="noshadow" src="images/rssbanner2.jpg" width="100%">
+    <br>
+    <button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler noshadow navbar-toggler-right notranslate" data-target="#nav-content" data-toggle="collapse" style="border: none; color: white; margin-left:-10px" type="button">&equiv;<!--img src="images/menu.jpg" class="noshadow" height="13px"-->
+      <small><small><small>MENU</small></small></small></button>
+    <div class="row">
+      <div class="collapse navbar-collapse navbar-toggle col" id="nav-content">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle menuH" data-toggle="dropdown" href="index.html" id="Preview" role="button">Home</a>
+            <div aria-labelledby="Preview" class="dropdown-menu">
+              <a class="dropdown-item" href="index.html">Home Page</a> <a class="dropdown-item" href="overview.html">Overview</a> <a class="dropdown-item" href="dera_picture_album.html">Dera Picture Album</a> <a class="dropdown-item" href="seekers-en.html#faq">FAQs</a> <a class="dropdown-item"
+                href="articles.html">Newspaper Articles</a>
+              <a class="dropdown-item" href="es-index.html">En Español</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="index.html" id="Preview" role="button">NEW</a>
+            <div aria-labelledby="Preview" class="dropdown-menu">
+              <span id="new-menu"></span>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle menuS" data-toggle="dropdown" href="#" id="Preview" role="button">Satsang</a>
+            <div aria-labelledby="Preview" class="dropdown-menu">
+              <a class="dropdown-item" href="satsang_information.html">General Satsang Information</a>
+              <a class="dropdown-item" href="satsang_schedules.html">India Satsang Information</a>
+              <a class="dropdown-item" href="india.html">India Satsang Centres</a>
+              <a class="dropdown-item" href="contact.html">Overseas Satsang Centres</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle menuM" data-toggle="dropdown" href="#" id="Preview" role="button">Humanitarian Aid</a>
+            <div aria-labelledby="Preview" class="dropdown-menu">
+             	<a class="dropdown-item" href="awareness_programs.html">Awareness Programs</a> 
+		<a class="dropdown-item" href="hospitals.html">Hospitals</a> 
+		<a class="dropdown-item" href="medical_camps.html">Medical Camps</a> 
+		<a class="dropdown-item" href="disaster_relief.html">Disaster Relief</a>
+		<a class="dropdown-item" href="covid-vaccines.html">COVID-19 Vaccinations</a>
+		<a class="dropdown-item" href="covid.html">COVID-19 Special Report</a>
+		<a class="dropdown-item" href="covid-care.html">COVID Care Facilities 2020</a>
+        <a class="dropdown-item" href="covid-activities.html">COVID Care Facilities 2021</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle menuP" data-toggle="dropdown" href="#" id="Preview" role="button">Publications</a>
+            <div aria-labelledby="Preview" class="dropdown-menu">
+		<a class="dropdown-item" href="http://www.scienceofthesoul.org/">Online Book Store (Abroad)</a> 
+		<a class="dropdown-item" href="https://rssbindiabooks.in">Online Book Store (India Only)</a> 
+		<a class="dropdown-item" href="ebooks.html">eBooks</a> <a class="dropdown-item" href="spirituallink.html">Spiritual Link</a> <a class="dropdown-item" href="satsangs_essays.html">Satsangs &amp;
+                Essays</a> <a class="dropdown-item" href="initiation.html">Initiation - Are We Ready?</a> <a class="dropdown-item" href="seekers.html">Seekers' Guide</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle menuA" data-toggle="dropdown" href="#" id="Preview" role="button">A/V & Photos</a>
+            <div aria-labelledby="Preview" class="dropdown-menu">
+		<a class="dropdown-item" href="audiobooks.html">Audio Books</a>
+		<a class="dropdown-item" href="QandA.html">Questions &amp; Answers - Audio</a> 
+		<!--a class="dropdown-item" href="discourses_audios.html">Discourses - Audio</a--> 
+		<a class="dropdown-item" href="discourses_audios.html">Discourses by Masters - Audio</a> 
+		<a class="dropdown-item" href="discourses.html">Discourses by Disciples - Audio</a> 
+		<a class="dropdown-item" href="shabads.html">Shabads - Audio</a>
+		<a class="dropdown-item" href="videos.html">Complete Video Collection</a> 
+		<a class="dropdown-item" href="photographs.html">Photographs</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle menuE" data-toggle="dropdown" href="#" id="Preview" role="button">Education</a>
+            <div aria-labelledby="Preview" class="dropdown-menu">
+              <a class="dropdown-item" href="pathseekers.html">Pathseekers School</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <main class="bd-content" role="main">
+<!--END HEADER-->
+<title>RSSB - Official</title>
+<meta name="description" content="This is the only official website of Radha Soami Satsang Beas and Science of the Soul. RSSB is a religious organization guided by the fundamental spiritual beliefs found at the heart of most religions, under the mentorship of a living spiritual teacher.">
+
+<style>.menuH {color: #fbf9cd !important}</style>
+<small><div class="text-right" style="padding-top:5px; font-family: sans-serif;"><a href="es-index.html"><b>En Español</b></a></div>
+
+<div class="text-center shadow" style="color:darkred; background-color:cornsilk; font-family: sans-serif; width:80%; margin:auto"><b>Quote of the Day</b><br style="line-height:40px;">
+"<span id="quote"></span>"<br><small><small>&mdash; <span id="author"></span> &mdash;</small></small></div></small>
+
+<!-- <p><div class="text-center" style="font-family: sans-serif;"><a href="cancelled.html"><b><u>Important Message from the Master</u></b></a></div></p> -->
+<p><div class="text-center" style="font-family: sans-serif;"><a href="announce.html"><b><u>Latest Official RSSB Information</u></b></a></div></p>
+
+<p>Radha Soami Satsang Beas (RSSB) along with its international affiliates is a spiritual organization guided by the fundamental spiritual beliefs found at the heart of most religions, under the mentorship of a living spiritual teacher.</p>
+  <p>In the Indian language, Radha Soami means &lsquo;lord of the soul&rsquo;, <em>satsang</em> describes a group that seeks truth, and Beas refers to the town near which the main centre is located in northern India. There are a number of other contemporary movements that use the name &lsquo;Radha Soami&rsquo; but Radha Soami Satsang Beas is not associated with any of them.</p>
+  <p>RSSB was established in India in 1891 and gradually began spreading to other countries. Today RSSB holds meetings in more than 90 countries worldwide. It is a non-profit organization with no affiliation to any political or commercial organizations.</p>
+  <p>The basis of every religion is spirituality. With the passage of time and changing social values, the basic spiritual teachings often become embellished with extra rules and rituals, and eventually take the shape of a formal religion. Despite its extensive outreach activities, RSSB tries to maintain the integrity of its spiritual core and preserve the simplicity of its teachings. At the heart of the RSSB teachings is a belief that there is a spiritual purpose to human life &ndash; to experience the divinity of God who resides in all of us. It is through this experience that we will realize the truth of the concept that there is only one God and we are all expressions of his love.</p>
+<p>Central to the RSSB teachings is a spiritual teacher who explains the purpose of life and guides and instructs members in a method of spirituality based on a daily meditation practice. The present teacher is <a href="#" data-toggle="modal" data-target="#myModal" title="Baba Gurinder Singh">Baba Gurinder Singh</a>, who lives with his family at the main centre in northern India.</p>
+<div aria-hidden="true" aria-labelledby="myLargeModalLabel" class="modal fade bd-example-modal-lg" id="myModal" role="dialog" tabindex="-1">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Baba Gurinder Singh</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-5"><img class="img-fluid" src="images/Photos/popup_babaji.jpg"></div>
+					<div class="col-md-5">
+						<p>Baba Gurinder Singh was born in 1954. His family is from a traditional agricultural community of Punjab, India. He was named by his predecessor as spiritual head of RSSB in 1990.</p>
+						<p>Based in Spain before accepting this position, he is now retired and lives off his own income. In keeping with the policy for all volunteers, he does not receive any money or honorarium from the Society.</p>
+						<p>As with his predecessors, he has dedicated his life to serving the Society and guiding its members on the spiritual path.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<p>By performing the meditation practice according to the teacher's instructions, individuals can realize the presence of God within themselves. It is a solitary practice that is done in the quiet of one's own home. Members commit themselves to a way of life that supports spiritual growth while carrying out their responsibilities to family, friends and society. There are no rituals, ceremonies, hierarchies or mandatory contributions, nor are there compulsory gatherings. Members need not give up their cultural identity or religious preference to follow this path.</p>
+  <p>To build on the primary spiritual practice of meditation, members are vegetarian, abstain from alcohol, tobacco, and recreational drugs, and are expected to lead a life of high moral values. A vegetarian diet encourages respect and empathy for all life and acknowledges that there is a debt to be paid for taking any life unnecessarily. Abstaining from intoxicants improves ones ability to concentrate and calms the mind during meditation. Members are encouraged to be self-supporting and not be a burden on society. They are free to make their own choices in life and maintain any cultural or religious affiliations they choose. RSSB does not involve itself in the personal lives of its members.</p>
+  <p>Inherent to the Society&rsquo;s philosophy is the importance of seva, meaning selfless service, or voluntarism. Voluntary service is the backbone of all activities connected with RSSB. All administrative functions, construction of Indian and international centres, feeding of the hundreds of thousands of visitors who visit the headquarters in India, writing and translating books and magazines explaining the teachings, are done by members on a voluntary basis. Mahatma Gandhi embodied the importance of service in his statement: &ldquo;The best way to find your self is to lose yourself in the service of others.&rdquo; It is believed that through service, one loses one&rsquo;s sense of self-importance and becomes humble. That is the foundation of a spiritual life.</p>
+<div class="row"><div class="col-md-4"><img src="images/HomePageShortVideoLarge.jpg" width="100%"></div>
+<div class="col-md-8"><i>This five-minute video presentation gives a brief overview of Radha Soami Satsang Beas and its sister organization, Science of the Soul. It discusses their philosophy, charitable activities, global presence, and it provides a profile of their administrative structure.</i><br>
+<b><a href="video-overview.html"<i aria-hidden="true" class="fa fa-play-circle"></i> Play</a></b></div>
+</div>
+<!--br><a href="articles.html"><b>Recent Articles Appearing in the Indian Press</b></a><br-->
+<br><b>Visit our Official RSSB YouTube Channel: <a href="https://www.youtube.com/@rss-b">RSSB – Official</a> 
+	<!-- & <a href="https://www.youtube.com/channel/UCiMr9l7tYY2hH0ztOEG3zNg">Beas : Satsang</a> -->
+</b><br>
+<br><table><tr>
+<td style="vertical-align: top;"><img src="images/RSSBbox.jpg" height=50pt class="float-left noshadow"></td>
+<td style="vertical-align: top;"><p style="color:darkred; font-family: Sans-Serif; font-size:12pt"><b><i>RSSB is an organization in special consultative status with the Economic and Social Council of the United Nations since 2018.</i></b></p></td>
+</tr></table>
+<div style="padding: 10px;background-color: cornsilk; font-family: sans-serif; font-size:10pt; line-height: 1.3" class="shadow">
+<p><b>Note:</b> This website, <a href="http://www.rssb.org">rssb.org</a>, as well as <a href="http://satsanginfo.rssb.org">satsanginfo.rssb.org</a>, <a href="http://www.scienceofthesoul.org">scienceofthesoul.org</a>, <a href="https://rssbindiabooks.in">rssbindiabooks.in</a> and <a style="word-wrap: break-word;" href="https://www.youtube.com/@rss-b">RSSB – Official</a> are the only official websites for Radha Soami Satsang Beas (RSSB). They have been created to provide up-to-date information about our organization. No other websites are authorized to represent the RSSB organization or Baba Gurinder Singh, and the information found on such websites cannot be presumed to be accurate.</p>
+<p>No personal data is collected by this website. However our data protection policy is provided so that everyone is informed about how we and our affiliated organizations deal with personal data collected in the ordinary course of our operations.  <a href="privacy.html">Click to view our policy statement.</a></p>
+</div>
+
+<script src='quotes.js' type="4bd13bdd44bba78ae3bfe885-text/javascript"></script>
+
+<!---FOOTER--->
+<br></article>
+			<div id="footer" style="margin-left:-15px; margin-right:-15px; margin-bottom:-45px; background-color: darkred;height: 30px;font-size: 8pt;font-family: sans-serif;color: white;">
+				<div id="footertext" style="padding: 3px 0 3px 20px;">
+					<span id="copyrightMessage">&copy; 2010-22 Radha Soami Satsang Beas</span>
+					| <a href="privacy.html" style="color: white !important">Privacy</a>
+				</div>
+			</div>
+		</main>
+	</div>
+	<script type="4bd13bdd44bba78ae3bfe885-text/javascript">this.top.location !== this.location && (this.top.location = this.location);</script><!--breaks out of frames-->
+<script src="instant.page.js" type="4bd13bdd44bba78ae3bfe885-module" defer></script><!--v5=osc menu problems-->
+</body>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="4bd13bdd44bba78ae3bfe885-|49" defer></script></html>
+
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8fe9a00b6ce53f05","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2024.10.5","token":"cbec06abfd6847af8a3355241b266613"}' crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyView App</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: black; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <canvas id="skyCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById("skyCanvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let stars = [];
+        let offsetX = 0, offsetY = 0;
+        let zoom = 1;
+        let dragging = false;
+        let lastX, lastY;
+
+        function generateStars(count) {
+            stars = [];
+            for (let i = 0; i < count; i++) {
+                stars.push({
+                    x: Math.random() * 4000 - 2000,
+                    y: Math.random() * 4000 - 2000,
+                    size: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function drawStars() {
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "white";
+            
+            stars.forEach(star => {
+                let x = (star.x + offsetX) * zoom + canvas.width / 2;
+                let y = (star.y + offsetY) * zoom + canvas.height / 2;
+                let size = star.size * zoom;
+                if (size > 0.2) {
+                    ctx.beginPath();
+                    ctx.arc(x, y, size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            });
+        }
+
+        function animate() {
+            drawStars();
+            requestAnimationFrame(animate);
+        }
+
+        canvas.addEventListener("mousedown", (e) => {
+            dragging = true;
+            lastX = e.clientX;
+            lastY = e.clientY;
+        });
+
+        canvas.addEventListener("mousemove", (e) => {
+            if (dragging) {
+                offsetX += (e.clientX - lastX) / zoom;
+                offsetY += (e.clientY - lastY) / zoom;
+                lastX = e.clientX;
+                lastY = e.clientY;
+            }
+        });
+
+        canvas.addEventListener("mouseup", () => { dragging = false; });
+        canvas.addEventListener("wheel", (e) => {
+            let zoomAmount = e.deltaY * -0.001;
+            zoom = Math.max(0.2, Math.min(zoom + zoomAmount, 5));
+        });
+
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        generateStars(500);
+        animate();
+    </script>
+</body>
+</html>

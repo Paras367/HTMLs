@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paras Music</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+        }
+        .music-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        .cover {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .controls button {
+            background: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="music-container">
+        <h2>Paras Music</h2>
+        <img id="cover" class="cover" src="https://source.unsplash.com/400x300/?music" alt="Album Cover">
+        <h3 id="song-title">Loading...</h3>
+        <audio id="audio" controls>
+            <source id="audio-source" src="" type="audio/mp3">
+        </audio>
+        <div class="controls">
+            <button onclick="prevSong()">⏮️</button>
+            <button onclick="playPause()">▶️/⏸</button>
+            <button onclick="nextSong()">⏭️</button>
+        </div>
+    </div>
+    <script>
+        const songs = [
+            {title: "Song 1", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"},
+            {title: "Song 2", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"},
+            {title: "Song 3", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"}
+        ];
+        
+        let currentSong = 0;
+        const audio = document.getElementById("audio");
+        const title = document.getElementById("song-title");
+        const source = document.getElementById("audio-source");
+        
+        function loadSong(index) {
+            title.innerText = songs[index].title;
+            source.src = songs[index].url;
+            audio.load();
+        }
+        
+        function playPause() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+        
+        function nextSong() {
+            currentSong = (currentSong + 1) % songs.length;
+            loadSong(currentSong);
+            audio.play();
+        }
+        
+        function prevSong() {
+            currentSong = (currentSong - 1 + songs.length) % songs.length;
+            loadSong(currentSong);
+            audio.play();
+        }
+        
+        loadSong(currentSong);
+    </script>
+</body>
+</html>

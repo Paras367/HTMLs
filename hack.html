@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacker Platform</title>
+  <style>
+    body {
+      background-color: black;
+      color: green;
+      font-family: 'Courier New', monospace;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    .hacker-terminal {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      width: 80%;
+      height: 300px;
+      background-color: black;
+      color: lime;
+      padding: 20px;
+      border: 2px solid lime;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+      overflow: auto;
+    }
+    .hacker-terminal p {
+      margin: 0;
+      word-wrap: break-word;
+    }
+    .effect {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      color: red;
+      font-weight: bold;
+      display: none;
+    }
+    .hacker-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="hacker-terminal">
+    <p>Connecting to server...</p>
+    <p>Establishing connection...</p>
+    <p>Accessing remote host...</p>
+    <p>Security breach detected.</p>
+    <p>Attempting to bypass firewall...</p>
+    <p>System compromised.</p>
+    <p>Initiating hack sequence...</p>
+    <p>Loading unauthorized data...</p>
+    <p>Executing script...</p>
+    <p>HACKING COMPLETE.</p>
+  </div>
+
+  <div class="effect" id="effect">HACKING IN PROGRESS...</div>
+
+  <img src="https://blog.procircular.com/hubfs/Hacker.jpeg" alt="Hacker Image" class="hacker-image" id="hacker-image">
+
+  <script>
+    let terminal = document.querySelector('.hacker-terminal');
+    let effect = document.getElementById('effect');
+    let hackerImage = document.getElementById('hacker-image');
+    let colors = ['#00FF00', '#FF0000', '#FFFF00', '#00FFFF', '#FF00FF'];
+
+    // Simulate random color changes
+    function changeColor() {
+      document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    // Display hacker image after a delay
+    function showHackerImage() {
+      hackerImage.style.display = 'block';
+    }
+
+    // Display hacking effect message
+    function showHackingEffect() {
+      effect.style.display = 'block';
+      setTimeout(() => {
+        effect.style.display = 'none';
+      }, 1000);
+    }
+
+    // Simulate hacking sequence
+    function simulateHacking() {
+      setTimeout(() => {
+        terminal.innerHTML += '<p>Accessing local server...</p>';
+      }, 1000);
+      setTimeout(() => {
+        terminal.innerHTML += '<p>Connection to localhost established.</p>';
+        showHackingEffect();
+      }, 2000);
+      setTimeout(() => {
+        terminal.innerHTML += '<p>Executing backdoor...</p>';
+        showHackingEffect();
+      }, 3000);
+      setTimeout(() => {
+        terminal.innerHTML += '<p>Injecting malware...</p>';
+        showHackingEffect();
+      }, 4000);
+      setTimeout(() => {
+        terminal.innerHTML += '<p>Connection terminated.</p>';
+        showHackingEffect();
+        showHackerImage();
+      }, 5000);
+    }
+
+    // Randomly change color every second
+    setInterval(changeColor, 1000);
+
+    // Simulate hacking effect on page load
+    window.onload = function() {
+      simulateHacking();
+    };
+  </script>
+</body>
+</html>

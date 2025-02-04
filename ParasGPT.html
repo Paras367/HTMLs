@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot - ParasGPT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #121212;
+            color: white;
+            transition: background 0.5s ease-in-out;
+        }
+        .chat-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #333;
+            padding: 10px;
+            border-radius: 5px;
+            background: #252525;
+            transition: background 0.5s;
+        }
+        .user-input {
+            width: calc(100% - 50px);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .send-btn {
+            padding: 10px;
+            background: #007bff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .float-btn {
+            margin: 5px;
+            padding: 10px;
+            background: #28a745;
+            border: none;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .flash {
+            background-color: #ff4757 !important;
+            transition: background 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h2>ParasGPT</h2>
+        <div class="chat-box" id="chatBox"></div>
+        <input type="text" id="userInput" class="user-input" placeholder="Ask me something...">
+        <button class="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+    <div class="floating-buttons">
+        <button class="float-btn" onclick="quickReply('Who is Paras?')">❓</button>
+        <button class="float-btn" onclick="quickReply('Tell me a joke')">😂</button>
+        <button class="float-btn" onclick="quickReply('Give me motivation')">💪</button>
+    </div>
+    <script>
+        const responses = {
+            "Who is Paras?": "Paras is a 10th-grade student skilled in Python, HTML, CSS, and JavaScript.",
+            "Tell me a joke": "Why don’t skeletons fight each other? They don’t have the guts! 😂",
+            "Give me motivation": "You are capable of amazing things! Keep pushing forward. 🚀",
+            "What is your name?": "I am ParasGPT, your personal chatbot!",
+            "How are you?": "I'm just a bunch of code, but thanks for asking! 😊"
+        };
+
+        function sendMessage() {
+            let userText = document.getElementById("userInput").value;
+            if (!userText) return;
+            appendMessage("You: " + userText);
+            setTimeout(() => respond(userText), 500);
+            document.getElementById("userInput").value = "";
+        }
+
+        function respond(userText) {
+            let questions = userText.split(" and ");
+            let reply = questions.map(q => responses[q.trim()] || "I don't know that yet! Try asking something else.").join("\n");
+            flashEffect();
+            appendMessage("ParasGPT: " + reply);
+        }
+
+        function appendMessage(message) {
+            let chatBox = document.getElementById("chatBox");
+            let messageElement = document.createElement("p");
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function quickReply(text) {
+            document.getElementById("userInput").value = text;
+            sendMessage();
+        }
+
+        function flashEffect() {
+            document.body.classList.add("flash");
+            setTimeout(() => document.body.classList.remove("flash"), 200);
+        }
+    </script>
+</body>
+</html>
